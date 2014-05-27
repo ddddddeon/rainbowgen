@@ -12,7 +12,8 @@ Bash script usage:
 ./rainbowgen.sh [-sql] [/path/to/wordlist.txt]
 ```
 
-Passing the ```-sql``` flag will prepare the hashed wordlist as an SQL statement for database insertion. 
+Passing the ```-sql``` flag will prepare the hashed wordlist as an SQL statement for database insertion.
+Otherwise, a plain text file is output.
 
 If no filename argument is passed, rainbowgen will prompt for the wordlist path. 
 
