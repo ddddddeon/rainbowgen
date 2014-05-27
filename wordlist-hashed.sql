@@ -15,7 +15,7 @@ INSERT INTO rainbow (word, md5hash, sha1hash) VALUES
 ('deon', 'fad445d574f4843f5af0cf7ffb2cea2c', '08ed6225093e68c2d490224bf56b9a2a673f92da'),
 ('doesn''t', '59a7709f7ee8c9dadf75615cbe4a79cf', '3090d78152a3e621d5e445916ba15d50c674da30'),
 ('give', 'a1ec23e9b9ab43a88222d9949ee26499', 'fa9f22e62229ac79ecee117c88192ee717a9e178'),
-('two', 'b8a9f715dbb64fd5c56e7783c6820a61', 'ad782ecdac770fc6eb9a62e44f90873fb97fb26b'),
+('2', 'c81e728d9d4c2f636f067f89cc14862c', 'da4b9237bacccdf19c0760cab7aec4a8359010b0'),
 ('fuux', '24eca770b7812a28014ce3c893648136', '75dfad1221164b49029a676e7eaa34632f9687b4'),
 ('end of table!', 'insert statement automated by', 'ur boi d');
 UNLOCK TABLES;
