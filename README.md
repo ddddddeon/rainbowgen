@@ -28,7 +28,7 @@ Creating the MySQL Database:
 mysql -u user -p < yourlist-hashed.sql
 ```
 If you're working with entries in the millions, you'll probably have to tweak your MySQL server settings, 
-increasing variables such as ```max_allowed_packet```,  ```net_read_timeout```, ```net_write_timeout```, 
+possibly increasing variables such as ```max_allowed_packet```,  ```net_read_timeout```, ```net_write_timeout```, 
 ```wait_timeout```, and/or ```interactive_timeout```.
 
 PHP script usage:
