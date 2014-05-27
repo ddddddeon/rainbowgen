@@ -7,7 +7,13 @@
 # not exactly elegant with the if statements but gets the job done :)
 # requires openssl
 
-if [[ -f $1 ]]; then 
+if [[ $# > 2 ]]; then 
+
+    printf "%s\n" "Too many arguments!"
+    printf "%s\n" "Usage: ./rainbowgen.sh [/path/to/wordlist.txt] [-sql]"
+    exit 0;
+
+elif [[ -f $1 ]]; then 
 
     wordlist="$1"
 
@@ -18,13 +24,7 @@ elif [[ -f $2 ]]; then
 elif ([[ $# == 1 ]] && [[ $1 == "-sql" ]]) || ([[ $# == 0 ]] || [[ ! -f $@ ]]); then    
 # lol ^^^
 
-until [[ -f $wordlist ]]; do read -p "Enter path to wordlist file: " wordlist; done
-
-elif [[ $# > 2 ]]; then 
-
-    printf "%s\n" "Too many arguments!"
-    printf "%s\n" "Usage: ./rainbowgen.sh [/path/to/wordlist.txt] [-sql]"
-    exit 0;
+    until [[ -f $wordlist ]]; do read -p "Enter path to wordlist file: " wordlist; done
 
 fi
 
