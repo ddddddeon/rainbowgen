@@ -11,3 +11,5 @@ Usage:
 Passing the ```-sql``` flag will prepare the hashed wordlist as an SQL statement for database insertion. 
 
 If no filename argument is passed, rainbowgen will prompt for the wordlist path. 
+
+This script requires OpenSSL.
