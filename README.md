@@ -1,7 +1,7 @@
 rainbowgen
 ==========
 
-Generate MD5 &amp; SHA-1 lookup tables from a user-supplied wordlist. Outputs either to raw .txt file or as an SQL insert statement.
+Generate MD5 &amp; SHA-1 lookup tables from a user-supplied wordlist. Outputs either to raw .txt file or to an .sql file as a MySQL insert statement.
 
 Usage:
 ------
