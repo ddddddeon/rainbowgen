@@ -16,7 +16,9 @@ if (!get_magic_quotes_gpc()) {
 $db = mysql_connect('localhost', 'username', 'password') or die("could not connect!");
 mysql_select_db('rainbow');
 
-$query = "SELECT DISTINCT word, md5hash, sha1hash FROM rainbow.rainbow WHERE " . $searchtype . " LIKE '%" . $searchterm . "%' ORDER BY word";
+$query = "SELECT DISTINCT word, md5hash, sha1hash FROM rainbow.rainbow WHERE "
+         . $searchtype . " LIKE '%" . $searchterm . "%' ORDER BY word";
+
 $result = mysql_query($query, $db);
 $num_results = mysql_num_rows($result);
 
