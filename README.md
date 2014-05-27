@@ -22,7 +22,7 @@ is output.
 If no filename argument is passed, rainbowgen will prompt for the 
 wordlist path. 
 
-See `wordlist.txt` for sample input file, and `wordlist-hashed.txt` / 
+See `wordlist.txt` for sample input, and `wordlist-hashed.txt` / 
 `wordlist-hashed.sql` for sample output.
 
 This script requires OpenSSL.
