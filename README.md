@@ -34,5 +34,5 @@ possibly increasing variables such as ```max_allowed_packet```,  ```net_read_tim
 PHP script usage:
 ------
 
-Self-explanatory. Use the ```index.php``` form to query the database by reverse md5 or sha1 lookup, 
+Use the ```index.php``` form to query the database by reverse md5 or sha1 lookup, 
 or by cleartext, and see the results fetched by ```rainbow.php```.
