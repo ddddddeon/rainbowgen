@@ -31,7 +31,7 @@ elif [[ -f $2 ]]; then
     wordlist="$2"
 elif [[ $# == 1 ]] && [[ $1 == "-sql" ]]; then
     read -p "Enter path to wordlist file: " wordlist    
-elif [[ $# == 0 ]]; then
+elif [[ $# == 0 ]] || [[ ! -f $@ ]]; then
     read -p "Enter path to wordlist file: " wordlist
 elif [[ $# > 2 ]]; then 
     printf "%s\n" "Only one argument allowed!"
