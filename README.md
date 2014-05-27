@@ -33,7 +33,7 @@ mysql -u user -p < yourlist-hashed.sql
 If you're working with entries in the millions or billions++, you'll probably 
 have to tweak your MySQL server settings, 
 possibly increasing variables such as `max_allowed_packet`, `net_read_timeout`,
-`net_write_timeout`, `wait_timeout`, and/or `interactive_timeout`.
+`net_write_timeout`, `wait_timeout`, and/or `interactive_timeout` as needed.
 
 Configure user privileges as appropriate.
 
