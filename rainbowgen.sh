@@ -17,7 +17,8 @@ elif [[ -f $2 ]]; then
 
 elif ([[ $# == 1 ]] && [[ $1 == "-sql" ]]) || ([[ $# == 0 ]] || [[ ! -f $@ ]]); then    
 # lol ^^^
-    read -p "Enter path to wordlist file: " wordlist    
+
+until [[ -f $wordlist ]]; do read -p "Enter path to wordlist file: " wordlist; done
 
 elif [[ $# > 2 ]]; then 
 
@@ -48,11 +49,11 @@ if [[ $2 == "-sql" ]] || [[ $1 == "-sql"  ]]; then
     for i in $words; do
 
 	printf "%s" "('" >> "${outfile}.sql"
-	printf "%s" "$1" | sed s/"'"/"''"/g >> "${outfile}.sql"
+	printf "%s" "$i" | sed s/"'"/"''"/g >> "${outfile}.sql"
 	printf "%s" "', '" >> "${outfile}.sql"
-	printf "%s" "$1" | openssl md5 | awk '{ printf "%s", $2 }' >> "${outfile}.sql"
+	printf "%s" "$i" | openssl md5 | awk '{ printf "%s", $2 }' >> "${outfile}.sql"
 	printf "%s" "', '" >> "${outfile}.sql"
-	printf "%s" "$1" | openssl sha1 | awk '{ printf "%s", $2 }' >> "${outfile}.sql"
+	printf "%s" "$i" | openssl sha1 | awk '{ printf "%s", $2 }' >> "${outfile}.sql"
 	printf "%s" "')," >> "${outfile}.sql"
 	printf "\n" >> "${outfile}.sql"
 
