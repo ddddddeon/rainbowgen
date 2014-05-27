@@ -73,7 +73,7 @@ else
 	printf "%s" "$i " >> "${outfile}.txt"
 	printf "%s" "$i" | openssl md5 | awk '{ printf "%s", $2 }' >> "${outfile}.txt"
 	printf "%s" " " >> "${outfile}.txt"
-	printf "%s" "$i" | openssl sha1 | awk '{ printf "%s\n", $2 }' >> "${outfile}.txt"
+	printf "%s" "$i" | openssl sha1 | awk '{ print $2 }' >> "${outfile}.txt"
     
     done
 
