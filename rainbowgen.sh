@@ -7,24 +7,6 @@
 # not exactly elegant with the if statements but gets the job done :)
 # requires openssl
 
-function listhashsql {
-    printf "%s" "('" >> "${outfile}.sql"
-    printf "%s" "$1" | sed s/"'"/"''"/g >> "${outfile}.sql"
-    printf "%s" "', '" >> "${outfile}.sql"
-    printf "%s" "$1" | openssl md5 | awk '{ printf "%s", $2 }' >> "${outfile}.sql"
-    printf "%s" "', '" >> "${outfile}.sql"
-    printf "%s" "$1" | openssl sha1 | awk '{ printf "%s", $2 }' >> "${outfile}.sql"
-    printf "%s" "')," >> "${outfile}.sql"
-    printf "\n" >> "${outfile}.sql"
-}
-
-function listhash {
-    printf "%s" "$i " >> "${outfile}.txt"
-    printf "%s" "$i" | openssl md5 | awk '{ printf "%s", $2 }' >> "${outfile}.txt"
-    printf "%s" " " >> "${outfile}.txt"
-    printf "%s" "$i" | openssl sha1 | awk '{ print $2 }' >> "${outfile}.txt"
-}
-
 if [[ -f $1 ]]; then 
     wordlist="$1"
 elif [[ -f $2 ]]; then
@@ -58,7 +40,14 @@ if [[ $2 == "-sql" ]] || [[ $1 == "-sql"  ]]; then
     printf "%s\n" 'INSERT INTO rainbow (word, md5hash, sha1hash) VALUES' >> "${outfile}.sql"
     
     for i in $words; do
-	listhashsql "$i"
+	    printf "%s" "('" >> "${outfile}.sql"
+	    printf "%s" "$1" | sed s/"'"/"''"/g >> "${outfile}.sql"
+	    printf "%s" "', '" >> "${outfile}.sql"
+	    printf "%s" "$1" | openssl md5 | awk '{ printf "%s", $2 }' >> "${outfile}.sql"
+	    printf "%s" "', '" >> "${outfile}.sql"
+	    printf "%s" "$1" | openssl sha1 | awk '{ printf "%s", $2 }' >> "${outfile}.sql"
+	    printf "%s" "')," >> "${outfile}.sql"
+	    printf "\n" >> "${outfile}.sql"
     done
     
     printf "%s\n" "('end of table!', 'insert statement automated by', 'ur boi d');" >> "${outfile}.sql"
@@ -71,7 +60,10 @@ else
     cat /dev/null > "${outfile}.txt"
 
     for i in $words; do
-	listhash "$i"
+	    printf "%s" "$i " >> "${outfile}.txt"
+	    printf "%s" "$i" | openssl md5 | awk '{ printf "%s", $2 }' >> "${outfile}.txt"
+	    printf "%s" " " >> "${outfile}.txt"
+	    printf "%s" "$i" | openssl sha1 | awk '{ print $2 }' >> "${outfile}.txt"
     done
 
     printf "%s\n" "DONE! check ${outfile}.txt in current directory for the generated list."
