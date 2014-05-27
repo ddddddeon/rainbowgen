@@ -18,6 +18,14 @@ If no filename argument is passed, rainbowgen will prompt for the wordlist path.
 
 This script requires OpenSSL.
 
+Creating the MySQL Database:
+------
+
+```
+mysql -u root -p < yourlist-hashed.sql
+```
+If you're working with entries in the millions, you'll probably have to tweak your MySQL server settings, increasing variablessuch as ```max_allowed_packet```,  ```net_read_timeout```, ```net_write_timeout```, ```wait_timeout```, and/or ```interactive_timeout```.
+
 PHP script usage:
 ------
 
