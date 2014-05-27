@@ -22,7 +22,7 @@ until [[ -f $wordlist ]]; do read -p "Enter path to wordlist file: " wordlist; d
 
 elif [[ $# > 2 ]]; then 
 
-    printf "%s\n" "Only one argument allowed!"
+    printf "%s\n" "Too many arguments!"
     printf "%s\n" "Usage: ./rainbowgen.sh [/path/to/wordlist.txt] [-sql]"
     exit 0;
 
