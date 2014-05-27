@@ -31,6 +31,8 @@ If you're working with entries in the millions, you'll probably have to tweak yo
 possibly increasing variables such as ```max_allowed_packet```,  ```net_read_timeout```, ```net_write_timeout```, 
 ```wait_timeout```, and/or ```interactive_timeout```.
 
+Configure user privileges as appropriate.
+
 PHP script usage:
 ------
 
