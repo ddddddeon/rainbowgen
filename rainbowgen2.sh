@@ -10,7 +10,7 @@
 if [[ $# > 2 ]]; then 
 
     printf "%s\n" "Too many arguments!"
-    printf "%s\n" "Usage: ./rainbowgen.sh [-sql] [/path/to/wordlist.txt]"
+    printf "%s\n" "Usage: ./rainbowgen.sh [/path/to/wordlist.txt] [-sql]"
     exit 0;
 
 elif [[ -f $1 ]]; then 
@@ -33,7 +33,7 @@ words=`cat $wordlist`
 
 printf "%s\n" "Hashing wordlist! May take a while depending on your list size. Plz wait..."
 
-if [[ $1 == "-sql" ]] || [[ $2 == "-sql"  ]]; then
+if [[ $2 == "-sql" ]] || [[ $1 == "-sql"  ]]; then
 
     printf "%s\n" 'DROP DATABASE IF NOT EXISTS rainbow;' > "${outfile}.sql" 
     printf "%s\n" 'CREATE DATABASE rainbow;' >> "${outfile}.sql"
