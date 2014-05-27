@@ -7,7 +7,7 @@ Usage:
 ------
 
 ```
-./rainbowgen.sh [/path/to/wordlist.txt] [-sql]
+./rainbowgen.sh [-sql] [/path/to/wordlist.txt]
 ```
 
 Passing the ```-sql``` flag will prepare the hashed wordlist as an SQL statement for database insertion. 
