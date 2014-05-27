@@ -51,11 +51,11 @@ if [[ $2 == "-sql" ]] || [[ $1 == "-sql"  ]]; then
     printf "%s\n" 'USE rainbow;' >> "${outfile}.sql"
     printf "%s\n" 'CREATE TABLE rainbow (' >> "${outfile}.sql"
     printf "%s\n" 'id INT(12) NOT NULL AUTO_INCREMENT,' >> "${outfile}.sql"
-    printf "%s\n" 'password VARCHAR(64) NOT NULL,' >> "${outfile}.sql"
+    printf "%s\n" 'word VARCHAR(64) NOT NULL,' >> "${outfile}.sql"
     printf "%s\n" 'md5hash VARCHAR(32) NOT NULL,' >> "${outfile}.sql"
     printf "%s\n" 'sha1hash VARCHAR(40) NOT NULL, PRIMARY KEY ("id") );' >> "${outfile}.sql"
     printf "%s\n" 'LOCK TABLES rainbow WRITE;' >> "${outfile}.sql"
-    printf "%s\n" 'INSERT INTO rainbow (password, md5hash, sha1hash) VALUES' >> "${outfile}.sql"
+    printf "%s\n" 'INSERT INTO rainbow (word, md5hash, sha1hash) VALUES' >> "${outfile}.sql"
     
     for i in $words; do
 	sqlhashlist "$i"

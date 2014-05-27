@@ -3,11 +3,11 @@ CREATE DATABASE rainbow;
 USE rainbow;
 CREATE TABLE rainbow (
 id INT(12) NOT NULL AUTO_INCREMENT,
-password VARCHAR(64) NOT NULL,
+word VARCHAR(64) NOT NULL,
 md5hash VARCHAR(32) NOT NULL,
 sha1hash VARCHAR(40) NOT NULL, PRIMARY KEY ("id") );
 LOCK TABLES rainbow WRITE;
-INSERT INTO rainbow (password, md5hash, sha1hash) VALUES
+INSERT INTO rainbow (word, md5hash, sha1hash) VALUES
 ('foo', 'acbd18db4cc2f85cedef654fccc4a4d8', '0beec7b5ea3f0fdbc95d0dd47f3c5bc275da8a33'),
 ('bar', '37b51d194a7513e45b56f6524f2d51f2', '62cdb7020ff920e5aa642c3d4066950dd1f01f4d'),
 ('baz', '73feffa4b7f6bb68e44cf984c85f6e88', 'bbe960a25ea311d21d40669e93df2003ba9b90a2'),
