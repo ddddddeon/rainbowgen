@@ -68,7 +68,7 @@ if [[ $2 == "-sql" ]] || [[ $1 == "-sql"  ]]; then
 
 else
 
-    cat /dev/null > wordlist-hashed.txt
+    cat /dev/null > "${outfile}.txt"
 
     for i in $words; do
 	hashlist "$i"
