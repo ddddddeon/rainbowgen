@@ -11,11 +11,11 @@ Bash script usage:
 ------
 
 ```
-./rainbowgen.sh [-sql] [/path/to/wordlist.txt]
+./rainbowgen.sh [-S] [/path/to/wordlist.txt]
 ```
 
 Use the file path of a newline-separated word list of your choosing as the 
-script's argument. Passing the `-sql` flag will prepare the hashed wordlist as
+script's argument. Passing the `-S` flag will prepare the hashed wordlist as
 an SQL statement for database insertion. Otherwise, a plain text file 
 is output.
 

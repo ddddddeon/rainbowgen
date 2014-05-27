@@ -10,7 +10,7 @@
 if [[ $# > 2 ]]; then 
 
     printf "%s\n" "Too many arguments!"
-    printf "%s\n" "Usage: ./rainbowgen.sh [-sql] [/path/to/wordlist.txt]"
+    printf "%s\n" "Usage: ./rainbowgen.sh [-S] [/path/to/wordlist.txt]"
     exit 0;
 
 elif [[ -f $1 ]]; then 
@@ -21,7 +21,7 @@ elif [[ -f $2 ]]; then
 
     wordlist="$2"
 
-elif ([[ $# == 1 ]] && [[ $1 == "-sql" ]]) || ([[ $# == 0 ]] || [[ ! -f $@ ]]); then    
+elif ([[ $# == 1 ]] && [[ $1 == "-S" ]]) || ([[ $# == 0 ]] || [[ ! -f $@ ]]); then    
 # lol ^^^
 
     until [[ -f $wordlist ]]; do read -p "Enter path to wordlist file: " wordlist; done
@@ -33,7 +33,7 @@ words=`cat $wordlist`
 
 printf "%s\n" "Hashing wordlist! May take a while depending on your list size. Plz wait..."
 
-if [[ $1 == "-sql" ]] || [[ $2 == "-sql"  ]]; then
+if [[ $1 == "-S" ]] || [[ $2 == "-S"  ]]; then
 
     printf "%s\n" 'DROP DATABASE IF NOT EXISTS rainbow;' > "${outfile}.sql" 
     printf "%s\n" 'CREATE DATABASE rainbow;' >> "${outfile}.sql"
