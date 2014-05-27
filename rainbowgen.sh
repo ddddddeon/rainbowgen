@@ -61,7 +61,7 @@ if [[ $2 == "-sql" ]] || [[ $1 == "-sql"  ]]; then
 	listhashsql "$i"
     done
     
-    printf "%s\n" "('end of table!', 'insert statement automated by', 'ur boi ddddddeon');" >> "${outfile}.sql"
+    printf "%s\n" "('end of table!', 'insert statement automated by', 'ur boi d');" >> "${outfile}.sql"
     printf "%s" "UNLOCK TABLES;" >> "${outfile}.sql"
 
     printf "%s\n" "DONE! check ${outfile}.sql in current directory for the generated SQL insert statement."
