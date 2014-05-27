@@ -7,7 +7,7 @@
 # not exactly elegant with the if statements but gets the job done :)
 # requires openssl
 
-function sqlhashlist {
+function listhashsql {
     printf "%s" "('" >> "${outfile}.sql"
     printf "%s" "$1" | sed s/"'"/"''"/g >> "${outfile}.sql"
     printf "%s" "', '" >> "${outfile}.sql"
@@ -18,7 +18,7 @@ function sqlhashlist {
     printf "\n" >> "${outfile}.sql"
 }
 
-function hashlist {
+function listhash {
     printf "%s" "$i " >> "${outfile}.txt"
     printf "%s" "$i" | openssl md5 | awk '{ printf "%s", $2 }' >> "${outfile}.txt"
     printf "%s" " " >> "${outfile}.txt"
@@ -58,7 +58,7 @@ if [[ $2 == "-sql" ]] || [[ $1 == "-sql"  ]]; then
     printf "%s\n" 'INSERT INTO rainbow (word, md5hash, sha1hash) VALUES' >> "${outfile}.sql"
     
     for i in $words; do
-	sqlhashlist "$i"
+	listhashsql "$i"
     done
     
     printf "%s\n" "('end of table!', 'insert statement automated by', 'ur boi ddddddeon');" >> "${outfile}.sql"
@@ -71,7 +71,7 @@ else
     cat /dev/null > "${outfile}.txt"
 
     for i in $words; do
-	hashlist "$i"
+	listhash "$i"
     done
 
     printf "%s\n" "DONE! check ${outfile}.txt in current directory for the generated list."
