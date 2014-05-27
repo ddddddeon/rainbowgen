@@ -3,7 +3,7 @@ CREATE DATABASE rainbow;
 USE rainbow;
 CREATE TABLE rainbow (
 id INT(12) NOT NULL AUTO_INCREMENT,
-word VARCHAR(64) NOT NULL,
+password VARCHAR(64) NOT NULL,
 md5hash VARCHAR(32) NOT NULL,
 sha1hash VARCHAR(40) NOT NULL, PRIMARY KEY ("id") );
 LOCK TABLES rainbow WRITE;
@@ -17,5 +17,5 @@ INSERT INTO rainbow (password, md5hash, sha1hash) VALUES
 ('give', 'a1ec23e9b9ab43a88222d9949ee26499', 'fa9f22e62229ac79ecee117c88192ee717a9e178'),
 ('two', 'b8a9f715dbb64fd5c56e7783c6820a61', 'ad782ecdac770fc6eb9a62e44f90873fb97fb26b'),
 ('fuux', '24eca770b7812a28014ce3c893648136', '75dfad1221164b49029a676e7eaa34632f9687b4'),
-('end of table'), ('insert statement automated by'), ('deon');
+('end of table!', 'insert statement automated by', 'ur boy ddddddeon');
 UNLOCK TABLES;
