@@ -54,8 +54,7 @@ if [[ $1 == "-S" ]] || [[ $2 == "-S"  ]]; then
 	printf "%s" "$i" | openssl md5 | awk '{ printf "%s", $2 }' >> "${outfile}.sql"
 	printf "%s" "', '" >> "${outfile}.sql"
 	printf "%s" "$i" | openssl sha1 | awk '{ printf "%s", $2 }' >> "${outfile}.sql"
-	printf "%s" "')," >> "${outfile}.sql"
-	printf "\n" >> "${outfile}.sql"
+	printf "%s\n" "')," >> "${outfile}.sql"
 
     done
     
