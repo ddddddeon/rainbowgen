@@ -48,13 +48,13 @@ if [[ $1 == "-S" ]] || [[ $2 == "-S"  ]]; then
     
     for i in $words; do
 
-	printf "%s" "('" >> "${outfile}.sql"
-	printf "%s" "$i" | sed s/"'"/"''"/g >> "${outfile}.sql"
-	printf "%s" "', '" >> "${outfile}.sql"
-	printf "%s" "$i" | openssl md5 | awk '{ printf "%s", $2 }' >> "${outfile}.sql"
-	printf "%s" "', '" >> "${outfile}.sql"
-	printf "%s" "$i" | openssl sha1 | awk '{ printf "%s", $2 }' >> "${outfile}.sql"
-	printf "%s\n" "')," >> "${outfile}.sql"
+	      printf "%s" "('" >> "${outfile}.sql"
+	      printf "%s" "$i" | sed s/"'"/"''"/g >> "${outfile}.sql"
+	      printf "%s" "', '" >> "${outfile}.sql"
+	      printf "%s" "$i" | openssl md5 | awk '{ printf "%s", $2 }' >> "${outfile}.sql"
+	      printf "%s" "', '" >> "${outfile}.sql"
+	      printf "%s" "$i" | openssl sha1 | awk '{ printf "%s", $2 }' >> "${outfile}.sql"
+	      printf "%s\n" "')," >> "${outfile}.sql"
 
     done
     
@@ -69,11 +69,11 @@ else
 
     for i in $words; do
 	    
-	printf "%s" "$i " >> "${outfile}.txt"
-	printf "%s" "$i" | openssl md5 | awk '{ printf "%s", $2 }' >> "${outfile}.txt"
-	printf "%s" " " >> "${outfile}.txt"
-	printf "%s" "$i" | openssl sha1 | awk '{ printf "%s\n", $2 }' >> "${outfile}.txt"
-    
+	      printf "%s" "$i " >> "${outfile}.txt"
+	      printf "%s" "$i" | openssl md5 | awk '{ printf "%s", $2 }' >> "${outfile}.txt"
+	      printf "%s" " " >> "${outfile}.txt"
+	      printf "%s" "$i" | openssl sha1 | awk '{ printf "%s\n", $2 }' >> "${outfile}.txt"
+        
     done
 
     printf "%s\n" "DONE! check ${outfile}.txt in current directory for the generated list."
